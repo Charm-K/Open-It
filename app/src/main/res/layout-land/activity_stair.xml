@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/st_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/stair_back" />
+
+    <ImageView
+        android:id="@+id/st_door"
+        android:layout_width="225dp"
+        android:layout_height="270dp"
+        android:onClick="goDoor"
+        app:layout_constraintBottom_toBottomOf="@+id/st_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/st_back"
+        app:layout_constraintVertical_bias="0.872"
+        app:srcCompat="@drawable/stair_door" />
+
+    <ImageView
+        android:id="@+id/st_left"
+        android:layout_width="52dp"
+        android:layout_height="38dp"
+        android:onClick="noUp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/st_back"
+        app:layout_constraintVertical_bias="0.928"
+        app:srcCompat="@drawable/stair_left" />
+
+    <ImageView
+        android:id="@+id/st_right"
+        android:layout_width="48dp"
+        android:layout_height="41dp"
+        android:onClick="noDown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.683"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928"
+        app:srcCompat="@drawable/stair_right" />
+
+    <ImageView
+        android:id="@+id/st_fireup"
+        android:layout_width="258dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="288dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/st_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fire" />
+
+    <ImageView
+        android:id="@+id/st_firedown"
+        android:layout_width="217dp"
+        android:layout_height="100dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.717"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.737"
+        app:srcCompat="@drawable/fire_down" />
+</androidx.constraintlayout.widget.ConstraintLayout>
