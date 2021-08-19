@@ -22,6 +22,7 @@
         <activity android:name=".Stair" />
         <activity android:name=".Elevator"/>
         <activity android:name=".Ch3Activity"/>
+        <activity android:name=".Ch4Activity"/>
     </application>
 
 </manifest>

@@ -26,7 +26,7 @@ public class Ch3Activity extends AppCompatActivity {
         imageView_ch3_towel.setOnTouchListener(this::onTouchTowel);
     }
 
-    public void onClickWaterTap(View view) {
+    public void onClickWaterTap(View v) {
         watertapIsOpen = !watertapIsOpen;
         imageView_ch3_water.setVisibility((watertapIsOpen)?View.VISIBLE:View.INVISIBLE);
     }

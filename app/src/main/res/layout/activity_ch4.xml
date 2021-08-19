@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView_ch4_fireup"
+        android:layout_width="201dp"
+        android:layout_height="133dp"
+        android:layout_marginStart="514dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="262dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fire" />
+
+    <ImageView
+        android:id="@+id/imageView_ch4_safetypin"
+        android:layout_width="38dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="387dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="306dp"
+        android:layout_marginBottom="336dp"
+        android:onClick="onClickSafetypin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ch4_safetypinmdpi" />
+
+    <ImageView
+        android:id="@+id/imageView_ch4_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ch4mdpi" />
+
+    <ImageView
+        android:id="@+id/imageView_ch4_background2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ch4_2mdpi" />
+
+    <ImageView
+        android:id="@+id/imageView_ch4_wind"
+        android:layout_width="200dp"
+        android:layout_height="189dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="504dp"
+        android:layout_marginBottom="140dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ch4_windmdpi" />
+
+    <ImageView
+        android:id="@+id/imageView_ch4_rotationArrow"
+        android:layout_width="104dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="396dp"
+        android:layout_marginTop="271dp"
+        android:layout_marginEnd="231dp"
+        android:layout_marginBottom="85dp"
+        android:onClick="onClickRotationArrow"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ch4_rotationarrowmdpi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
