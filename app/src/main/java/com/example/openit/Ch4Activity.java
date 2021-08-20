@@ -14,7 +14,9 @@ public class Ch4Activity extends AppCompatActivity {
     private ImageView imageView_ch4_wind;
     private ImageView imageView_ch4_rotationArrow;
     private ImageView imageView_ch4_fireup;
+    private ImageView imageView_ch4_powder;
     private int fireup_alpha = 256;
+    private boolean fireExtinguisherIsRotate = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,9 @@ public class Ch4Activity extends AppCompatActivity {
         imageView_ch4_wind = (ImageView)findViewById(R.id.imageView_ch4_wind);
         imageView_ch4_rotationArrow = (ImageView)findViewById(R.id.imageView_ch4_rotationArrow);
         imageView_ch4_fireup = (ImageView)findViewById(R.id.imageView_ch4_fireup);
+        imageView_ch4_powder = (ImageView)findViewById(R.id.imageView_ch4_powder);
         imageView_ch4_fireup.setOnTouchListener(this::onTouchFireup);
+        imageView_ch4_powder.setImageAlpha(0);
     }
 
     public void onClickSafetypin(View v) {
@@ -38,6 +42,7 @@ public class Ch4Activity extends AppCompatActivity {
     }
 
     public void onClickRotationArrow(View v) {
+        fireExtinguisherIsRotate = true;
         imageView_ch4_rotationArrow.setVisibility(View.INVISIBLE);
         imageView_ch4_background.setVisibility(View.INVISIBLE);
         imageView_ch4_background2.setVisibility(View.VISIBLE);
@@ -49,11 +54,13 @@ public class Ch4Activity extends AppCompatActivity {
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                if (!fireExtinguisherIsRotate) return false;
                 return true;
             case MotionEvent.ACTION_MOVE:
                 fireup_alpha -= Math.random() % 40 + 1;
                 fireup_alpha = (fireup_alpha < 0)?0:fireup_alpha;
                 imageView_ch4_fireup.setImageAlpha(fireup_alpha);
+                imageView_ch4_powder.setImageAlpha(128 - fireup_alpha);
                 break;
             case MotionEvent.ACTION_UP:
                 break;

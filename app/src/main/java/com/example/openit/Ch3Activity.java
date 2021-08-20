@@ -1,6 +1,8 @@
 package com.example.openit;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -46,9 +48,20 @@ public class Ch3Activity extends AppCompatActivity {
 
                 float towelX = imageView_ch3_towel.getX() + imageView_ch3_towel.getWidth()/2;
                 float towelY = imageView_ch3_towel.getY() + imageView_ch3_towel.getHeight()/2;
-                if (towelX >= waterX && towelY >= waterY
-                        && towelX <= waterX + imageView_ch3_water.getWidth() && towelY <= waterY + imageView_ch3_water.getHeight())
+                if (watertapIsOpen
+                        && towelX >= waterX && towelY >= waterY
+                        && towelX <= waterX + imageView_ch3_water.getWidth() && towelY <= waterY + imageView_ch3_water.getHeight()) {
                     imageView_ch3_waterOfTowel.setVisibility(View.VISIBLE);
+                    Intent intent4 = new Intent(this, Ch4Activity.class);
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            startActivity(intent4);
+                            finish();
+                        }
+                    }, 400);
+                }
                 break;
             case MotionEvent.ACTION_UP:
                 break;

@@ -46,5 +46,15 @@ public class MainActivity extends AppCompatActivity {
         animation_main.start();
         animation_ch1_1.start();
         animation_ch1_2.start();
+
+        Intent intent3 = new Intent(this, Ch3Activity.class);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(intent3);
+                finish();
+            }
+        }, 5000*2);
     }
 }
