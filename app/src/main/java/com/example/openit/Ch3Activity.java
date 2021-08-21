@@ -58,6 +58,7 @@ public class Ch3Activity extends AppCompatActivity {
                         @Override
                         public void run() {
                             startActivity(intent4);
+                            overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                             finish();
                         }
                     }, 400);

@@ -11,7 +11,7 @@
         android:id="@+id/imageView_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@mipmap/mainmdpi"
+        app:srcCompat="@drawable/main_back"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
@@ -31,15 +31,17 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
-    <Button
-        android:id="@+id/button_satrt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/button_start"
+        android:layout_width="132dp"
+        android:layout_height="53dp"
         android:onClick="onClick"
-        android:text="start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageView_ch1_1"
+        app:layout_constraintVertical_bias="0.432"
+        app:srcCompat="@drawable/main_start" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

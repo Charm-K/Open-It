@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView_main;
     private ImageView imageView_ch1_1;
     private ImageView imageView_ch1_2;
-    private Button button_start;
-    public static boolean start = true; //완성 후 false로 바꾸기
+    private ImageView button_start;
+    public static boolean start = false; //완성 후 false로 바꾸기
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         imageView_main = (ImageView)findViewById(R.id.imageView_main);
         imageView_ch1_1 = (ImageView)findViewById(R.id.imageView_ch1_1);
         imageView_ch1_2 = (ImageView)findViewById(R.id.imageView_ch1_2);
-        button_start = (Button)findViewById(R.id.button_satrt);
+        button_start = (ImageView)findViewById(R.id.button_start);
 
         imageView_ch1_1.setX(imageView_ch1_1.getX() + 1800);
         imageView_ch1_2.setX(imageView_ch1_2.getX() + 1800 * 2);
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(intent3);
+                overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 finish();
             }
         }, 5000*2);
