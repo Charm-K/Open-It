@@ -1,5 +1,6 @@
 package com.example.openit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -58,7 +59,12 @@ public class Ch4Activity extends AppCompatActivity {
                 return true;
             case MotionEvent.ACTION_MOVE:
                 fireup_alpha -= Math.random() % 40 + 1;
-                fireup_alpha = (fireup_alpha < 0)?0:fireup_alpha;
+                //fireup_alpha = (fireup_alpha < 0)?0:fireup_alpha;
+                if(fireup_alpha <= 0){
+                    Intent intent = new Intent(this, Elevator.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+                }
                 imageView_ch4_fireup.setImageAlpha(fireup_alpha);
                 imageView_ch4_powder.setImageAlpha(128 - fireup_alpha);
                 break;

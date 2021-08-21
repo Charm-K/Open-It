@@ -9,25 +9,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OpenIt">
-        <activity android:name=".MainActivity"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".SplashActivity"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".Final"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".Stubborn"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".Stair"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".Elevator"
+        <activity android:name=".Ch2Activity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Ch3Activity"/>
-        <activity android:name=".Ch4Activity"/>
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Final"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Stubborn"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Stair"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Elevator"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Ch3Activity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Ch4Activity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
