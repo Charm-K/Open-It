@@ -19,14 +19,18 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView_ch1_1;
     private ImageView imageView_ch1_2;
     private Button button_start;
+    public static boolean start = true; //완성 후 false로 바꾸기
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(start==false){
+            Intent intent = new Intent(this, SplashActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+            start = true;
+        }
 
-        Intent intent = new Intent(this, SplashActivity.class);
-        startActivity(intent);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); //가로로 변경
         setContentView(R.layout.activity_main);
 
         imageView_main = (ImageView)findViewById(R.id.imageView_main);
