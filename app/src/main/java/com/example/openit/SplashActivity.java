@@ -19,6 +19,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 finish();
+                overridePendingTransition(R.anim.fadein, R.anim.fadeout);
             }
         }, 3000);
     }
