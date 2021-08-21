@@ -26,6 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Ch3Activity"/>
+        <activity android:name=".Ch4Activity"/>
     </application>
 
 </manifest>

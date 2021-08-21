@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         imageView_ch1_2.setX(imageView_ch1_2.getX() + 1800 * 2);
     }
 
-    public void onClick(View view) {
+    public void onClick(View v) {
         button_start.setVisibility(View.INVISIBLE);
         ObjectAnimator animation_main = ObjectAnimator.ofFloat(imageView_main, "translationX", -1800 * 2).setDuration(5000 * 2);
         ObjectAnimator animation_ch1_1 = ObjectAnimator.ofFloat(imageView_ch1_1, "translationX", -1800).setDuration(5000 * 2);
@@ -50,5 +50,15 @@ public class MainActivity extends AppCompatActivity {
         animation_main.start();
         animation_ch1_1.start();
         animation_ch1_2.start();
+
+        Intent intent3 = new Intent(this, Ch3Activity.class);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(intent3);
+                finish();
+            }
+        }, 5000*2);
     }
 }
