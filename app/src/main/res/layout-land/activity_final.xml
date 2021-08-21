@@ -10,6 +10,7 @@
         android:id="@+id/fin_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +21,7 @@
         android:id="@+id/fin_back2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,9 +32,150 @@
         android:id="@+id/fin_show"
         android:layout_width="610dp"
         android:layout_height="228dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/fin_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/final_show" />
+
+    <TextView
+        android:id="@+id/fin_name"
+        android:layout_width="109dp"
+        android:layout_height="18dp"
+        android:gravity="left"
+        android:text="Player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/fin_show"
+        app:layout_constraintEnd_toEndOf="@+id/fin_show"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="@+id/fin_show"
+        app:layout_constraintTop_toTopOf="@+id/fin_show"
+        app:layout_constraintVertical_bias="0.395" />
+
+    <TextView
+        android:id="@+id/fin_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="님은"
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/fin_show"
+        app:layout_constraintEnd_toEndOf="@+id/fin_show"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toEndOf="@+id/fin_name"
+        app:layout_constraintTop_toTopOf="@+id/fin_show"
+        app:layout_constraintVertical_bias="0.392" />
+
+    <TextView
+        android:id="@+id/fin_time"
+        android:layout_width="141dp"
+        android:layout_height="21dp"
+        android:text="Time"
+        android:visibility="invisible"
+        android:gravity="left"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/fin_show"
+        app:layout_constraintEnd_toEndOf="@+id/fin_show"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/fin_show"
+        app:layout_constraintTop_toTopOf="@+id/fin_show"
+        app:layout_constraintVertical_bias="0.541" />
+
+    <TextView
+        android:id="@+id/fin_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="모바일 화재 대피 훈련을"
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/fin_show"
+        app:layout_constraintEnd_toEndOf="@+id/fin_show"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@+id/fin_show"
+        app:layout_constraintTop_toTopOf="@+id/fin_show"
+        app:layout_constraintVertical_bias="0.674" />
+
+    <TextView
+        android:id="@+id/fin_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="클리어하였습니다."
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/fin_show"
+        app:layout_constraintEnd_toEndOf="@+id/fin_show"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/fin_show"
+        app:layout_constraintTop_toTopOf="@+id/fin_show"
+        app:layout_constraintVertical_bias="0.808" />
+
+    <ImageView
+        android:id="@+id/fin_editname"
+        android:layout_width="315dp"
+        android:layout_height="157dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/fin_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@drawable/final_edit" />
+
+    <ImageView
+        android:id="@+id/fin_editbut"
+        android:layout_width="58dp"
+        android:layout_height="39dp"
+        android:onClick="getName"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/fin_editname"
+        app:layout_constraintEnd_toEndOf="@+id/fin_editname"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/fin_editname"
+        app:layout_constraintTop_toTopOf="@+id/fin_editname"
+        app:layout_constraintVertical_bias="0.889"
+        app:srcCompat="@drawable/final_editbut" />
+
+    <EditText
+        android:id="@+id/fin_edit"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:visibility="invisible"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.505" />
+
+    <ImageView
+        android:id="@+id/fin_home"
+        android:layout_width="137dp"
+        android:layout_height="40dp"
+        android:onClick="goHome"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fin_back"
+        app:layout_constraintVertical_bias="0.885"
+        app:srcCompat="@drawable/fin_home" />
+
+    <ImageView
+        android:id="@+id/fin_warning"
+        android:layout_width="188dp"
+        android:layout_height="9dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/fin_show"
+        app:layout_constraintEnd_toEndOf="@+id/fin_show"
+        app:layout_constraintStart_toStartOf="@+id/fin_show"
+        app:layout_constraintTop_toTopOf="@+id/fin_show"
+        app:layout_constraintVertical_bias="0.931"
+        app:srcCompat="@drawable/fin_warning" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +19,7 @@ public class Elevator extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); //가로로 변경
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); //가로로 변경
         setContentView(R.layout.activity_elevator);
 
         e_before = (ImageView)findViewById(R.id.ele_before);
@@ -27,15 +30,27 @@ public class Elevator extends AppCompatActivity {
 
     public void noElevator(View view){
         e_before.setVisibility(View.INVISIBLE);
-        e_after.setVisibility(View.VISIBLE);
+        fadeInAndHideImage(e_after);
     }
 
     public void yesStair(View view){
         Intent intent = new Intent(this, Stair.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
     }
 
-
+    private void fadeInAndHideImage(final ImageView img) { //이미지뷰 페이드인
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setInterpolator(new AccelerateInterpolator());
+        fadeIn.setDuration(500);
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+            public void onAnimationEnd(Animation animation) {
+                img.setVisibility(View.VISIBLE); }
+            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationStart(Animation animation) {}
+        });
+        img.startAnimation(fadeIn);
+    }
 
 
 }
