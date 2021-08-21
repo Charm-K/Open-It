@@ -6,6 +6,9 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,7 +54,7 @@ public class Ch3Activity extends AppCompatActivity {
                 if (watertapIsOpen
                         && towelX >= waterX && towelY >= waterY
                         && towelX <= waterX + imageView_ch3_water.getWidth() && towelY <= waterY + imageView_ch3_water.getHeight()) {
-                    imageView_ch3_waterOfTowel.setVisibility(View.VISIBLE);
+                    fadeInAndHideImage(imageView_ch3_waterOfTowel);
                     Intent intent4 = new Intent(this, Ch4Activity.class);
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
@@ -70,5 +73,18 @@ public class Ch3Activity extends AppCompatActivity {
                 return false;
         }
         return true;
+    }
+
+    private void fadeInAndHideImage(final ImageView img) { //이미지뷰 페이드인
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setInterpolator(new AccelerateInterpolator());
+        fadeIn.setDuration(500);
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+            public void onAnimationEnd(Animation animation) {
+                img.setVisibility(View.VISIBLE); }
+            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationStart(Animation animation) {}
+        });
+        img.startAnimation(fadeIn);
     }
 }
