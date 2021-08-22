@@ -3,6 +3,7 @@ package com.example.openit;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -112,8 +113,15 @@ public class Final extends AppCompatActivity{
         name = null;
     }
 
-    public void goHome(View view){
+    public void goHome(View view) {
+        // 메인 액티비티 띄우기 전에 액티비티 스택 비우기
         Intent intent = new Intent(this, MainActivity.class);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        } else {
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        }
+
         startActivity(intent);
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
     }
