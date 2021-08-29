@@ -54,4 +54,14 @@
         app:layout_constraintTop_toTopOf="@+id/ch2_back"
         app:layout_constraintVertical_bias="0.047"
         app:srcCompat="@drawable/fireplug_ment" />
+
+    <ImageView
+        android:id="@+id/ch2_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/ch2_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/guide_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
