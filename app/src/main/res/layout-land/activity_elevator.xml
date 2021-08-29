@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/elevator_back" />
 
     <ImageView
@@ -68,4 +68,16 @@
         app:layout_constraintTop_toTopOf="@+id/ele_back"
         app:layout_constraintVertical_bias="0.558"
         app:srcCompat="@drawable/elevator_door" />
+
+    <ImageView
+        android:id="@+id/ele_temp"
+        android:layout_width="76dp"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ele_back"
+        app:layout_constraintVertical_bias="0.958"
+        app:srcCompat="@drawable/elevator_temp1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
