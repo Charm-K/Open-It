@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Ch3Activity extends AppCompatActivity {
+    private ImageView imageView_ch3_guide;
     private ImageView imageView_ch3_water;
     private ImageView imageView_ch3_towel;
     private ImageView imageView_ch3_waterOfTowel;
@@ -24,11 +25,18 @@ public class Ch3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_ch3);
-
+        imageView_ch3_guide = (ImageView)findViewById(R.id.imageView_ch3_guide);
         imageView_ch3_water = (ImageView)findViewById(R.id.imageView_ch3_water);
         imageView_ch3_towel = (ImageView)findViewById(R.id.imageView_ch3_towel);
         imageView_ch3_waterOfTowel = (ImageView)findViewById(R.id.imageView_ch3_waterOfTowel);
         imageView_ch3_towel.setOnTouchListener(this::onTouchTowel);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                fadeOutAndHideImage(imageView_ch3_guide);
+            }
+        }, 2000);
     }
 
     public void onClickWaterTap(View v) {
@@ -82,6 +90,18 @@ public class Ch3Activity extends AppCompatActivity {
         fadeIn.setAnimationListener(new Animation.AnimationListener() {
             public void onAnimationEnd(Animation animation) {
                 img.setVisibility(View.VISIBLE); }
+            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationStart(Animation animation) {}
+        });
+        img.startAnimation(fadeIn);
+    }
+    private void fadeOutAndHideImage(final ImageView img) { //이미지뷰 페이드아웃
+        Animation fadeIn = new AlphaAnimation(1, 0);
+        fadeIn.setInterpolator(new AccelerateInterpolator());
+        fadeIn.setDuration(500);
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+            public void onAnimationEnd(Animation animation) {
+                img.setVisibility(View.INVISIBLE); }
             public void onAnimationRepeat(Animation animation) {}
             public void onAnimationStart(Animation animation) {}
         });

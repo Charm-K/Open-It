@@ -3,6 +3,7 @@ package com.example.openit;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
@@ -13,7 +14,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Elevator extends AppCompatActivity {
-
+    ImageView e_guide;
     ImageView e_before;
     ImageView e_after;
     ImageView e_door;
@@ -25,12 +26,19 @@ public class Elevator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elevator);
 
+        e_guide = (ImageView)findViewById(R.id.ele_guide);
         e_before = (ImageView)findViewById(R.id.ele_before);
         e_after = (ImageView)findViewById(R.id.ele_after);
         e_door = (ImageView)findViewById(R.id.ele_door);
         e_degree = (ImageView)findViewById(R.id.ele_temp);
         e_degree.setOnTouchListener(this::checkDegree);
-
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                fadeOutAndHideImage(e_guide);
+            }
+        }, 2000);
     }
 
     public void noElevator(View view){
@@ -88,6 +96,17 @@ public class Elevator extends AppCompatActivity {
         });
         img.startAnimation(fadeIn);
     }
-
+    private void fadeOutAndHideImage(final ImageView img) { //이미지뷰 페이드아웃
+        Animation fadeIn = new AlphaAnimation(1, 0);
+        fadeIn.setInterpolator(new AccelerateInterpolator());
+        fadeIn.setDuration(500);
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+            public void onAnimationEnd(Animation animation) {
+                img.setVisibility(View.INVISIBLE); }
+            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationStart(Animation animation) {}
+        });
+        img.startAnimation(fadeIn);
+    }
 
 }

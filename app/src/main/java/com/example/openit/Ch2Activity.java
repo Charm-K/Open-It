@@ -15,7 +15,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class Ch2Activity extends AppCompatActivity {
-
+    public ImageView c2_guide;
     public ImageView c2_button;
     public ImageView c2_ment;
     public ImageView c2_human;
@@ -28,13 +28,20 @@ public class Ch2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ch2);
-
+        c2_guide = (ImageView)findViewById(R.id.ch2_guide);
         c2_button = (ImageView)findViewById(R.id.ch2_button);
         c2_ment = (ImageView)findViewById(R.id.ch2_ment);
         c2_human = (ImageView)findViewById(R.id.ch2_player);
         soundPool = new SoundPool(1,AudioManager.STREAM_MUSIC, 0);
         soundID = soundPool.load(this,R.raw.siren_sound,0);
         animTransRight = AnimationUtils.loadAnimation(this,R.anim.anim_translate_right);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                fadeOutAndHideImage(c2_guide);
+            }
+        }, 2000);
     }
 
     public void pushBell(View v){
@@ -73,6 +80,19 @@ public class Ch2Activity extends AppCompatActivity {
         fadeIn.setAnimationListener(new Animation.AnimationListener() {
             public void onAnimationEnd(Animation animation) {
                 img.setVisibility(View.VISIBLE); }
+            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationStart(Animation animation) {}
+        });
+        img.startAnimation(fadeIn);
+    }
+
+    private void fadeOutAndHideImage(final ImageView img) { //이미지뷰 페이드아웃
+        Animation fadeIn = new AlphaAnimation(1, 0);
+        fadeIn.setInterpolator(new AccelerateInterpolator());
+        fadeIn.setDuration(500);
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+            public void onAnimationEnd(Animation animation) {
+                img.setVisibility(View.INVISIBLE); }
             public void onAnimationRepeat(Animation animation) {}
             public void onAnimationStart(Animation animation) {}
         });

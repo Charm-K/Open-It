@@ -15,6 +15,8 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Stubborn extends AppCompatActivity {
+
+    public ImageView st_guide;
     ImageView st_box1;
     ImageView st_box2;
 
@@ -33,6 +35,7 @@ public class Stubborn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); //가로로 변경
         setContentView(R.layout.activity_stubborn);
+        st_guide = (ImageView)findViewById(R.id.stub_guide);
         st_box1 = (ImageView)findViewById(R.id.stub_box1);
         st_box2 = (ImageView)findViewById(R.id.stub_box2);
         st_set = (ImageView)findViewById(R.id.stub_set1);
@@ -40,6 +43,13 @@ public class Stubborn extends AppCompatActivity {
         st_set2 = (ImageView)findViewById(R.id.stub_set2);
         st_sup = (ImageView)findViewById(R.id.stub_support1);
         st_set1.setOnTouchListener(this::dragSet);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                fadeOutAndHideImage(st_guide);
+            }
+        }, 2000);
     }
 
     /*
@@ -160,6 +170,18 @@ public class Stubborn extends AppCompatActivity {
         fadeIn.setAnimationListener(new Animation.AnimationListener() {
             public void onAnimationEnd(Animation animation) {
                 img.setVisibility(View.VISIBLE); }
+            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationStart(Animation animation) {}
+        });
+        img.startAnimation(fadeIn);
+    }
+    private void fadeOutAndHideImage(final ImageView img) { //이미지뷰 페이드아웃
+        Animation fadeIn = new AlphaAnimation(1, 0);
+        fadeIn.setInterpolator(new AccelerateInterpolator());
+        fadeIn.setDuration(500);
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+            public void onAnimationEnd(Animation animation) {
+                img.setVisibility(View.INVISIBLE); }
             public void onAnimationRepeat(Animation animation) {}
             public void onAnimationStart(Animation animation) {}
         });

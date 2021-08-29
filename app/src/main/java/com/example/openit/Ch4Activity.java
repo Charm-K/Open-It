@@ -3,6 +3,7 @@ package com.example.openit;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.ImageReader;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,6 +19,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Ch4Activity extends AppCompatActivity {
+    private ImageView imageView_ch4_guide;
     private ImageView imageView_ch4_background;
     private ImageView imageView_ch4_background2;
     private ImageView imageView_ch4_safetypin;
@@ -34,7 +36,7 @@ public class Ch4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_ch4);
-
+        imageView_ch4_guide = (ImageView)findViewById(R.id.imageView_ch4_guide);
         imageView_ch4_background = (ImageView)findViewById(R.id.imageView_ch4_background);
         imageView_ch4_background2 = (ImageView)findViewById(R.id.imageView_ch4_background2);
         imageView_ch4_safetypin = (ImageView)findViewById(R.id.imageView_ch4_safetypin);
@@ -44,11 +46,19 @@ public class Ch4Activity extends AppCompatActivity {
         imageView_ch4_powder = (ImageView)findViewById(R.id.imageView_ch4_powder);
         imageView_ch4_fireup.setOnTouchListener(this::onTouchFireup);
         imageView_ch4_powder.setImageAlpha(0);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                fadeOutAndHideImage(imageView_ch4_guide);
+            }
+        }, 2000);
     }
 
     public void onClickSafetypin(View v) {
         imageView_ch4_safetypin.setVisibility(View.INVISIBLE);
         Handler handler = new Handler();
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -58,9 +68,10 @@ public class Ch4Activity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                blinkImage(imageView_ch4_rotationArrow); //imageView_ch4_rotationArrow.setVisibility(View.VISIBLE);
+                fadeInAndHideImage(imageView_ch4_rotationArrow);
             }
-        }, 3000);
+        }, 2000);
+
     }
 
     public void onClickRotationArrow(View v) {
@@ -110,18 +121,18 @@ public class Ch4Activity extends AppCompatActivity {
         img.startAnimation(fadeIn);
     }
 
-    private void blinkImage(final ImageView img) { //이미지뷰 페이드인
-        Animation blink = new AlphaAnimation(0, 1);
-        blink.setInterpolator(new AccelerateInterpolator());
-        blink.setDuration(1000);
-        blink.setRepeatCount(2);
-        blink.setAnimationListener(new Animation.AnimationListener() {
+    private void fadeOutAndHideImage(final ImageView img) { //이미지뷰 페이드아웃
+        Animation fadeIn = new AlphaAnimation(1, 0);
+        fadeIn.setInterpolator(new AccelerateInterpolator());
+        fadeIn.setDuration(500);
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
             public void onAnimationEnd(Animation animation) {
-                img.setVisibility(View.VISIBLE);
-            }
+                img.setVisibility(View.INVISIBLE); }
             public void onAnimationRepeat(Animation animation) {}
             public void onAnimationStart(Animation animation) {}
         });
-        img.startAnimation(blink);
+        img.startAnimation(fadeIn);
     }
+
+
 }

@@ -71,8 +71,8 @@
 
     <ImageView
         android:id="@+id/ele_temp"
-        android:layout_width="76dp"
-        android:layout_height="43dp"
+        android:layout_width="83dp"
+        android:layout_height="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.743"
@@ -80,4 +80,14 @@
         app:layout_constraintTop_toTopOf="@+id/ele_back"
         app:layout_constraintVertical_bias="0.958"
         app:srcCompat="@drawable/elevator_temp1" />
+
+    <ImageView
+        android:id="@+id/ele_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/ele_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/guide_4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
