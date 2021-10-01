@@ -1,6 +1,7 @@
 ## Open-It : A simulation application for disaster response education.
 
 ### Introduction
+It is a simulation application for disaster response education.
 Instead of receiving face-to-face disaster response education at elementary, middle, and high schools, this project aims not only to help students cultivate disaster response knowledge in a simple and safe way, but also to compensate for the problems of disaster safety education currently in effect.
 We used a game format with a storyline so that players could enjoy the content in the application.
 
