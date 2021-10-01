@@ -14,17 +14,17 @@ The main steps for using the 'Open-It!' application are as follows.
 
 ### Scene
 1. Main scene
-<img src="https://user-images.githubusercontent.com/76726898/135649207-f6150af0-3312-4894-a75c-04f7b141892c.png" width="200" height="100"/>
+<img src="https://user-images.githubusercontent.com/76726898/135649207-f6150af0-3312-4894-a75c-04f7b141892c.png" width="400" height="200"/>
 2. STEP1 | Notification of fire occurrence around the area through fire hydrant
-<img src="https://user-images.githubusercontent.com/76726898/135649266-e5b6a67f-097b-408c-beb4-da4f32c5a599.png" width="200" height="100"/>
+<img src="https://user-images.githubusercontent.com/76726898/135649266-e5b6a67f-097b-408c-beb4-da4f32c5a599.png" width="400" height="200"/>
 3. STEP2 | Protect your respiratory system with a wet towel
-<img src="https://user-images.githubusercontent.com/76726898/135649312-3f2931a3-07d5-49e0-971e-b9b528caead6.png" width="200" height="100"/>
+<img src="https://user-images.githubusercontent.com/76726898/135649312-3f2931a3-07d5-49e0-971e-b9b528caead6.png" width="400" height="200"/>
 4. STEP3 | Use a fire extinguisher to extinguish small flames
-<img src="https://user-images.githubusercontent.com/76726898/135649396-c44e7e8f-6cf3-4452-9d97-7c7997cddcda.png" width="200" height="100"/>
+<img src="https://user-images.githubusercontent.com/76726898/135649396-c44e7e8f-6cf3-4452-9d97-7c7997cddcda.png" width="400" height="200"/>
 5. STEP4 | Evacuate from the fire scene through the emergency exit
-<img src="https://user-images.githubusercontent.com/76726898/135649446-3973b8f1-1aa6-45b6-a881-f5892fc9d5a3.png" width="200" height="100"/>
+<img src="https://user-images.githubusercontent.com/76726898/135649446-3973b8f1-1aa6-45b6-a881-f5892fc9d5a3.png" width="400" height="200"/>
 6. STEP5 | Escape from the building using the descending life line
-<img src="https://user-images.githubusercontent.com/76726898/135649508-6403406e-9732-460b-9423-d48f6c098155.png" width="200" height="100"/>
+<img src="https://user-images.githubusercontent.com/76726898/135649508-6403406e-9732-460b-9423-d48f6c098155.png" width="400" height="200"/>
 
 
 
